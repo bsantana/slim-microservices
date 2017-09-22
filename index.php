@@ -12,6 +12,18 @@ $app = new \Slim\App;
  */
 $app->get('/', function (Request $request, Response $response) use ($app) {
     $response->getBody()->write("Bebê de Microservice!");
+    $arr = ['maça' => ['casa', 'carro'], 'laranja' => 'outra'];
+    foreach ($arr as $key => $value) {
+    	
+
+    	if ($key == 'maça') {
+    		foreach ($value as $key => $value) {
+    			echo '<br>'.$key.' '.$value.'-';
+    		}
+    	} else {
+    		echo '<br>'.$key.' '.$value.'-';
+    	}
+    }
     return $response;
 });
 
